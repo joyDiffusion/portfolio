@@ -15,3 +15,17 @@ menuBtn.addEventListener('click', (e) => {
 
   mobileMenu.classList.toggle('hidden');
 });
+
+// Toggle menu on/off after only selecting a menu item
+mobileMenu.addEventListener('click', (e) => {
+  if (e.target.tagName === 'A') {
+    mobileMenu.classList.toggle('hidden');
+    menuClosedIcon.classList.replace('hidden', 'block');
+    menuOpenIcon.classList.replace('block', 'hidden');
+  }
+});
+
+// Copyright information
+const currentYear = new Date().getFullYear();
+const copyrightDiv = document.getElementById('copyright');
+copyrightDiv.innerHTML = '&copy; ' + currentYear + ' Joe Inthasone';
